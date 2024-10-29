@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
+import Counter from "./Components/Counter";
 
 const titleStyles = {
   backgroundColor: "#ffda92",
