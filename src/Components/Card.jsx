@@ -2,7 +2,7 @@ import { useState } from "react";
 import CardStyles from "../styles/Card.module.css";
 import Counter from "./Counter";
 
-const Card = ({ pizza, cart, setCart }) => {
+const Card = ({ pizza, setCart }) => {
   const { tipo, img, precio } = pizza;
   const [counter, setCounter] = useState(0);
   return (
@@ -13,7 +13,7 @@ const Card = ({ pizza, cart, setCart }) => {
       <Counter counter={counter} setCounter={setCounter} />
       <button
         disabled={counter === 0}
-        onClick={() => setCart([...cart, pizza])}
+        onClick={() => setCart((prev) => [...prev, pizza])}
       >
         Agregar al 🛒
       </button>

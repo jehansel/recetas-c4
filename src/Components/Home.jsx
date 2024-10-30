@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="list-container">
       {pizzas.map((pizza) => (
-        <Card key={pizza.id} pizza={pizza} cart={cart} setCart={setCart} />
+        <Card key={pizza.id} pizza={pizza} setCart={setCart} />
       ))}
     </div>
   );
