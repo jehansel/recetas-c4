@@ -3,6 +3,9 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Counter from "./Components/Counter";
 import Form from "./Components/Form";
+import ClassComponent from "./Clase 9/ClassComponent";
+import FuncComponent from "./Clase 9/FuncComponent";
+import { useState } from "react";
 
 const titleStyles = {
   backgroundColor: "#ffda92",
@@ -14,12 +17,17 @@ const titleStyles = {
 };
 
 function App() {
+  const [toggle, setToggle] = useState(true);
+
   return (
     <>
-      <Navbar />
+      {/* <ClassComponent /> */}
+      {toggle && <FuncComponent />}
+      <button onClick={() => setToggle(!toggle)}>Toggle componente</button>
+      {/* <Navbar />
       <h1 style={titleStyles}>Bienvenidos a proyecto Recetas</h1>
       <Form />
-      <Home />
+      <Home /> */}
     </>
   );
 }

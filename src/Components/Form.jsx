@@ -18,8 +18,15 @@ const Form = () => {
     event.preventDefault();
     const regexNum = /[0-9]/;
     console.log(regexNum.test(user.direccion));
+    // let regex = /^\s/
+    // !regex.test(string)
+    // trim()
+    // trimStart()
+    // !string.startsWith(" ")
+    // string[0] !== " "
+
     if (
-      user.nombre.length >= 3 &&
+      user.nombre.trim().length >= 3 &&
       user.direccion.includes(" ") &&
       regexNum.test(user.direccion)
     ) {
