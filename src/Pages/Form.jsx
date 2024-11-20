@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Message from "./Message";
+import Message from "../Components/Message";
+import { Link, useNavigate } from "react-router-dom";
 
 const Form = () => {
-  //   const [nombre, setNombre] = useState("");
-  //   const [direccion, setDireccion] = useState("");
-
   const [user, setUser] = useState({
     nombre: "",
     direccion: "",
@@ -12,18 +10,11 @@ const Form = () => {
   const [show, setShow] = useState(false);
   const [error, setError] = useState(false);
 
-  console.log(user);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const regexNum = /[0-9]/;
-    console.log(regexNum.test(user.direccion));
-    // let regex = /^\s/
-    // !regex.test(string)
-    // trim()
-    // trimStart()
-    // !string.startsWith(" ")
-    // string[0] !== " "
 
     if (
       user.nombre.trim().length >= 3 &&
@@ -32,6 +23,9 @@ const Form = () => {
     ) {
       setShow(true);
       setError(false);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
     } else {
       setError(true);
     }
@@ -71,7 +65,3 @@ const Form = () => {
 };
 
 export default Form;
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-// });

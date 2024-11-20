@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
-import { pizzas } from "../utils/pizzas";
-import Card from "./Card";
+import Card from "../Components/Card";
 import axios from "axios";
-
+const titleStyles = {
+  backgroundColor: "#ffda92",
+  color: "firebrick",
+  width: "40%",
+  margin: "10px auto",
+  borderRadius: "10px",
+  padding: "10px",
+};
 const Home = () => {
   const [cart, setCart] = useState([]);
   const [recipes, setRecipes] = useState([]);
@@ -20,11 +26,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="list-container">
-      {recipes.map((recipe) => (
-        <Card key={recipe.id} recipe={recipe} setCart={setCart} />
-      ))}
-    </div>
+    <>
+      <h1 style={titleStyles}>Lista de recetas</h1>
+      <div className="list-container">
+        {recipes.map((recipe) => (
+          <Card key={recipe.id} recipe={recipe} setCart={setCart} />
+        ))}
+      </div>{" "}
+    </>
   );
 };
 
